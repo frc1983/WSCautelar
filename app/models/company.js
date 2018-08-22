@@ -12,9 +12,9 @@ const CompanySchema = new mongoose.Schema({
         lowercase: true
     },
     CNPJ: {
-        type: Number,
+        type: String,
         unique: true,
-        required: false
+        required: true
     },
     active: { 
         type: Boolean, 

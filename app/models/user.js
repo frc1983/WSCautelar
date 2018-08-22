@@ -22,6 +22,7 @@ const UserSchema = new mongoose.Schema({
         required: true,
         select: false
     },
+    company: {type: mongoose.Schema.Types.ObjectId, ref: 'Company', required: true},
     active: { 
         type: Boolean, 
         default: false 
