@@ -1,6 +1,4 @@
-const path = require('path');
-const nodemailer = require('nodemailer');
-const hbs = require('nodemailer-express-handlebars');
+const mailer = require('../../modules/mailer');
 
 const { mailLogTo, mailLogFrom } = require('../config/mail.json');
 
