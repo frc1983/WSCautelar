@@ -1,4 +1,4 @@
-const mailer = require('../../modules/mailer');
+const mailer = require('../modules/mailer');
 
 const { mailLogTo, mailLogFrom } = require('../config/mail.json');
 
