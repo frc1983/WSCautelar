@@ -24,9 +24,12 @@ router.post('/register', async (req, res) => {
         if (user)
             return res.status(400).send({ error: 'Usuário já cadastrado' });
 
-        var companyFound = await Company.findOne({ "CNPJ": company.CNPJ });
-        if (!companyFound)
-            return res.status(400).send({ error: 'Empresa não cadastrada' });
+        var companyFound = null;
+        if (company !== undefined) {
+            companyFound = await Company.findOne({ "CNPJ": company.CNPJ });
+            if (!companyFound)
+                return res.status(400).send({ error: 'Empresa não cadastrada' });
+        }
 
         user = new User();
         user = req.body;
@@ -50,9 +53,12 @@ router.put('/register', async (req, res) => {
         if (!CPF)
             return res.status(400).send({ error: 'CPF de Usuário inválido' });
 
-        var companyFound = await Company.findOne({ "CNPJ": company.CNPJ });
-        if (!companyFound)
-            return res.status(400).send({ error: 'Empresa não cadastrada' });
+        var companyFound = null;
+        if (company !== undefined) {
+            companyFound = await Company.findOne({ "CNPJ": company.CNPJ });
+            if (!companyFound)
+                return res.status(400).send({ error: 'Empresa não cadastrada' });
+        }
 
         var user = await User.findOne({ "CPF": CPF });
         if (!user)
