@@ -7,6 +7,7 @@ const ChecklistItens = require('../models/checklistItens');
 const ChecklistConditions = require('../models/checklistConditions');
 const Pictures = require('../models/pictures');
 const Company = require('../models/company');
+const Logger = require('../../modules/log');
 
 const router = express.Router();
 

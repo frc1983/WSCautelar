@@ -6,6 +6,7 @@ const mailer = require('../../modules/mailer');
 const authConfig = require('../../config/auth');
 const User = require('../models/user');
 const Company = require('../models/company');
+const Logger = require('../../modules/log');
 
 const router = express.Router();
 
