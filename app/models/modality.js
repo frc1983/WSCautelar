@@ -5,6 +5,11 @@ const ModalitySchema = new mongoose.Schema({
         type: String,
         required: true,
     },
+    number: {
+        type: Number,
+        required: true,
+    },
+    company: { type: mongoose.Schema.Types.ObjectId, ref: 'Company' },
     checklist: { type: mongoose.Schema.Types.ObjectId, ref: 'Checklist' },
     pictures: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Picture' }],
     active: {

@@ -11,7 +11,7 @@ const router = express.Router();
 
 function generateToken(params = {}) {
     return jwt.sign(params, authConfig.secret, {
-        expiresIn: 86400,
+        expiresIn: 43200,
     });
 }
 
@@ -38,7 +38,7 @@ router.post('/register', async (req, res) => {
             token: generateToken({ id: user.id }),
         });
     } catch (err) {
-        return res.status(400).send({ error: 'Erro de registro' });
+        return Logger(res, { error: 'Erro de registro novo' }, err);
     }
 });
 
@@ -56,6 +56,7 @@ router.put('/register', async (req, res) => {
         var user = await User.findOne({ "CPF": CPF });
         if (!user)
             return res.status(400).send({ error: 'Usuário não encontrado' });
+
         user.name = name;
         user.email = email;
         user.active = active;
@@ -68,30 +69,34 @@ router.put('/register', async (req, res) => {
             token: generateToken({ id: user.id }),
         });
     } catch (err) {
-        return res.status(400).send({ error: 'Erro de registro' });
+        return Logger(res, { error: 'Erro de alteração de registro' }, err);
     }
 });
 
 router.post('/authenticate', async (req, res) => {
     const { CPF, password } = req.body;
 
-    const user = await User.findOne({ CPF }).populate('company').select('+password');
+    try {
+        const user = await User.findOne({ CPF }).populate('company').select('+password');
 
-    if (!user)
-        return res.status(400).send({ error: 'Usuário não encontrado' });
+        if (!user)
+            return res.status(400).send({ error: 'Usuário não encontrado' });
 
-    if (!await bcryptjs.compare(password, user.password))
-        return res.status(400).send({ error: 'Senha inválida' });
+        if (!await bcryptjs.compare(password, user.password))
+            return res.status(400).send({ error: 'Senha inválida' });
 
-    if (!user.active)
-        return res.status(400).send({ error: 'Usuário inativo' });
+        if (!user.active)
+            return res.status(400).send({ error: 'Usuário inativo' });
 
-    user.password = undefined;
+        user.password = undefined;
 
-    res.send({
-        user,
-        token: generateToken({ id: user.id }),
-    });
+        res.send({
+            user,
+            token: generateToken({ id: user.id }),
+        });
+    } catch (err) {
+        return Logger(res, { error: 'Erro na autenticação' }, err);
+    }
 });
 
 router.post('/forgot_password', async (req, res) => {
@@ -127,7 +132,7 @@ router.post('/forgot_password', async (req, res) => {
             return res.send();
         });
     } catch (err) {
-        res.status(400).send({ error: 'Erro no "Esqueci senha"' });
+        return Logger(res, { error: 'Erro no "Esqueci senha' }, err);
     }
 });
 
@@ -155,7 +160,7 @@ router.post('/reset_password', async (req, res) => {
         res.send();
 
     } catch (err) {
-        res.status(400).send({ error: 'Erro no envio da nova senha' });
+        return Logger(res, { error: 'Erro no envio da nova senha' }, err);
     }
 });
 

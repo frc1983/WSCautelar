@@ -1,8 +1,10 @@
 const mongoose = require('../../database');
 
-const EvaluatedChecklistSchema = new mongoose.Schema({
-    company: {},
-    checklist: {},
+const EvaluatedSchema = new mongoose.Schema({
+    user: {type: mongoose.Schema.Types.ObjectId, ref: 'User'},
+    company: {type: mongoose.Schema.Types.ObjectId, ref: 'Company'},
+    modality: {type: mongoose.Schema.Types.ObjectId, ref: 'Modality'},
+    vehicle: {type: mongoose.Schema.Types.ObjectId, ref: 'Vehicle'},
     evaluatedValues: [{
         groupNumber: {
             type: Number,
@@ -23,6 +25,6 @@ const EvaluatedChecklistSchema = new mongoose.Schema({
     }
 });
 
-const EvaluatedChecklist = mongoose.model('EvaluatedChecklist', EvaluatedChecklistSchema);
+const Evaluated = mongoose.model('Evaluated', EvaluatedSchema);
 
-module.exports = EvaluatedChecklist;
+module.exports = Evaluated;
