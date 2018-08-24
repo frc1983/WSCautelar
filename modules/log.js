@@ -9,13 +9,11 @@ const Logger = function sendLog(res, error, err){
         template: 'error/log',
         context: { error, err },
     }, (err) => {
-        if(err){
+        if(err)
             console.log('Nao foi possivel enviar o email de log');
-            return res.status(400).send(error);
-        }
-    });
 
-    return res.status(400).send(error);
+        return res.status(400).send(error);
+    });    
 }
 
 module.exports = Logger;
