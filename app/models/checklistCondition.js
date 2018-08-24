@@ -9,7 +9,7 @@ const ChecklistConditionSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
-    aproved: {
+    reproved: {
         type: Boolean,
         default: false
     },

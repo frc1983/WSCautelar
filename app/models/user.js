@@ -25,7 +25,7 @@ const UserSchema = new mongoose.Schema({
     company: {type: mongoose.Schema.Types.ObjectId, ref: 'Company', required: false},
     active: { 
         type: Boolean, 
-        default: false 
+        default: true 
     },
     passwordResetToken: {
         type: String,

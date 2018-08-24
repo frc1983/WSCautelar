@@ -18,7 +18,7 @@ const CompanySchema = new mongoose.Schema({
     },
     active: { 
         type: Boolean, 
-        default: false 
+        default: true 
     },
     createdAt: {
         type: Date,
