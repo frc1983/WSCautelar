@@ -54,4 +54,19 @@ router.put('/', async (req, res) => {
     }
 });
 
+router.delete('/:CNPJ', async (req, res) => {
+    const { CNPJ } = req.params;
+
+    try {
+        var removed = await Company.findOneAndRemove(CNPJ, function (err, doc) {
+            if (!doc)
+                res.status(400).send({ error: 'Empresa nao encontrada' });
+            else
+                res.status(200).send();
+        });
+    } catch (err) {
+        return Logger(res, { error: 'Erro ao remover Empresa' }, err);
+    }
+});
+
 module.exports = app => app.use('/company', router);

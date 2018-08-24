@@ -5,7 +5,7 @@ const ChecklistSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
-    groups: [{type: mongoose.Schema.Types.ObjectId, ref: 'ChecklistGroups'}],
+    groups: [{type: mongoose.Schema.Types.ObjectId, ref: 'ChecklistGroup'}],
     active: {
         type: Boolean,
         default: true

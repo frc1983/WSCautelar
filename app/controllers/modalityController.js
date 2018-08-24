@@ -66,17 +66,61 @@ router.post('/', async (req, res) => {
                 return doc.company != null && doc.company.CNPJ == mod.company.CNPJ;
             });
 
-            if (modality)
+            if (modality.length > 0)
                 throw Error("Modalidade já cadastrada para a empresa");
-            else if (!modality) {
+            else {
                 var newModality = await createModality(mod);
                 var m = await Modality.create(newModality);
                 return res.send({ modality: m });
             }
         })
-        .catch(function(err) {
+        .catch(function (err) {
             return Logger(res, { error: err.message }, err);
         });
+});
+
+router.delete('/:CNPJ/:number', async (req, res) => {
+    const { CNPJ, number } = req.params;
+
+    try {
+        var removed = await Modality.find({ "number": number })
+            .populate('company')
+            .populate('pictures')
+            .then(async function (docs) {
+                modality = docs.filter(function (doc) {
+                    return doc.company != null && doc.company.CNPJ == CNPJ;
+                });
+
+                if (modality.length === 0)
+                    throw Error("Modalidade nao encontrada para a empresa");
+
+                modality[0].pictures.forEach(picture => {
+                    picture.remove();
+                });
+
+                var checklist = await Checklist.findById(modality[0].checklist._id).populate({
+                    path: 'groups', populate: { path: 'itens', populate: { path: 'conditions' } }
+                });
+                checklist.groups.forEach(group => {
+                    group.itens.forEach(item => {
+                        item.conditions.forEach(condition => {
+                            condition.remove();
+                        });
+                        item.remove();
+                    });
+                    group.remove();
+                });
+                checklist.remove();
+                modality[0].remove();
+
+                res.status(200).send();
+            })
+            .catch(function (err) {
+                return Logger(res, { error: 'Modalidade nao encontrada' }, err);
+            });
+    } catch (err) {
+        return Logger(res, { error: 'Erro ao remover MOdalidade' }, err);
+    }
 });
 
 async function createModality(mod) {
@@ -105,21 +149,6 @@ async function validateCompany(company) {
         throw Error('Empresa não cadastrada');
 
     return company;
-}
-
-function recriatePictures(pictures) {
-    var arrayPictures = [];
-    if (pictures.length > 0) {
-        pictures.forEach(pic => {
-            var newPic = Picture();
-            newPic.name = pic.name;
-            newPic.number = pic.number;
-            newPic.require = pic.require;
-            arrayPictures.push(newPic);
-        });
-    }
-
-    return arrayPictures;
 }
 
 function validateChecklist(checklist) {
