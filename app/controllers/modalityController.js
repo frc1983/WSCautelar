@@ -83,7 +83,7 @@ router.delete('/:CNPJ/:number', async (req, res) => {
     const { CNPJ, number } = req.params;
 
     try {
-        var removed = await Modality.find({ "number": number })
+        Modality.find({ "number": number })
             .populate('company')
             .populate('pictures')
             .then(async function (docs) {
