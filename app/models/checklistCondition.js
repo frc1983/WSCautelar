@@ -1,6 +1,6 @@
 const mongoose = require('../../database');
 
-const ChecklistConditionsSchema = new mongoose.Schema({
+const ChecklistConditionSchema = new mongoose.Schema({
     number: {
         type: Number,
         required: true,
@@ -23,6 +23,6 @@ const ChecklistConditionsSchema = new mongoose.Schema({
     }
 });
 
-const ChecklistConditions = mongoose.model('ChecklistConditions', ChecklistConditionsSchema);
+const ChecklistCondition = mongoose.model('ChecklistCondition', ChecklistConditionSchema);
 
-module.exports = ChecklistConditions;
+module.exports = ChecklistCondition;

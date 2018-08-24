@@ -3,8 +3,8 @@ var express = require('express'),
   bodyParser = require('body-parser'),
   db = require('./database/index');
 
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json({limit: '50mb', extended: true}));
+app.use(bodyParser.urlencoded({ limit: '50mb',extended: false }));
 app.engine('html', require('ejs').renderFile);
 
 require('./app/controllers/index')(app);

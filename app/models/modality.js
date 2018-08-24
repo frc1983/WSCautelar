@@ -1,7 +1,7 @@
 const mongoose = require('../../database');
 
 const ModalitySchema = new mongoose.Schema({
-    name: {
+    title: {
         type: String,
         required: true,
     },
@@ -11,10 +11,10 @@ const ModalitySchema = new mongoose.Schema({
     },
     company: { type: mongoose.Schema.Types.ObjectId, ref: 'Company' },
     checklist: { type: mongoose.Schema.Types.ObjectId, ref: 'Checklist' },
-    pictures: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Picture' }],
+    pictures: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Picture', require: false }],
     active: {
         type: Boolean,
-        default: false
+        default: true
     },
     createdAt: {
         type: Date,

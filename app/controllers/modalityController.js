@@ -2,10 +2,10 @@ const express = require('express');
 const authMiddleware = require('../middlewares/auth');
 const Modality = require('../models/modality');
 const Checklist = require('../models/checklist');
-const ChecklistGroups = require('../models/checklistGroups');
-const ChecklistItens = require('../models/checklistItens');
-const ChecklistConditions = require('../models/checklistConditions');
-const Pictures = require('../models/pictures');
+const ChecklistGroup = require('../models/checklistGroup');
+const ChecklistItem = require('../models/checklistItem');
+const ChecklistCondition = require('../models/checklistCondition');
+const Picture = require('../models/picture');
 const Company = require('../models/company');
 const Logger = require('../../modules/log');
 
@@ -56,10 +56,141 @@ router.get('/:cnpj?', async (req, res) => {
     };
 });
 
+router.post('/', async (req, res) => {
+    var mod = req.body.modality;
+
+    var modality = await Modality.find({ "number": mod.number })
+        .populate('company')
+        .then(async function (docs) {
+            modality = docs.filter(function (doc) {
+                return doc.company != null && doc.company.CNPJ == mod.company.CNPJ;
+            });
+
+            if (modality)
+                throw Error("Modalidade já cadastrada para a empresa");
+            else if (!modality) {
+                var newModality = await createModality(mod);
+                var m = await Modality.create(newModality);
+                return res.send({ modality: m });
+            }
+        })
+        .catch(function(err) {
+            return Logger(res, { error: err.message }, err);
+        });
+});
+
+async function createModality(mod) {
+    var newModality = new Modality(mod);
+
+    var company = await validateCompany(mod.company);
+    //Recria itens de checklist para salvar no banco
+    var newArrayChecklist = validateChecklist(mod.checklist);
+
+    newModality.company = company;
+    newModality.pictures = insertPictures(mod.pictures);
+    newModality.checklist = insertChecklist(newArrayChecklist);
+
+    return newModality;
+}
+
+async function validateCompany(company) {
+    if (company == null)
+        throw Error('A Empresa não foi enviada');
+
+    else if (!company.CNPJ)
+        throw Error('O CNPJ da Empresa não foi enviado');
+
+    var company = await Company.findOne({ "CNPJ": company.CNPJ });
+    if (!company)
+        throw Error('Empresa não cadastrada');
+
+    return company;
+}
+
+function recriatePictures(pictures) {
+    var arrayPictures = [];
+    if (pictures.length > 0) {
+        pictures.forEach(pic => {
+            var newPic = Picture();
+            newPic.name = pic.name;
+            newPic.number = pic.number;
+            newPic.require = pic.require;
+            arrayPictures.push(newPic);
+        });
+    }
+
+    return arrayPictures;
+}
+
+function validateChecklist(checklist) {
+    if (!checklist)
+        throw Error("Checklist não foi enviado");
+    else if (checklist) {
+        if (!checklist.groups || checklist.groups.length == 0)
+            throw Error("É necessário ao menos um grupo no checklist");
+
+        checklist.groups.forEach(group => {
+            if (!group.itens || group.itens.length == 0)
+                throw Error("É necessário ao menos um item no grupo");
+
+            group.itens.forEach(item => {
+                if (!item.conditions || item.conditions.length == 0)
+                    throw Error("É necessário ao menos um item no grupo");
+            });
+        });
+    }
+
+    return checklist;
+}
+
+function insertChecklist(checklist) {
+    var retChecklist = new Checklist(checklist);
+    retChecklist.groups = [];
+    checklist.groups.forEach(group => {
+        var g = new ChecklistGroup(group);
+        g.itens = [];
+
+        group.itens.forEach(item => {
+            var i = new ChecklistItem(item);
+            i.conditions = [];
+
+            item.conditions.forEach(condition => {
+                var c = new ChecklistCondition(condition);
+                c.save();
+                i.conditions.push(c);
+            });
+
+            i.save();
+            i.markModified('conditions');
+            g.itens.push(i);
+        });
+
+        g.save();
+        g.markModified('itens');
+        retChecklist.groups.push(g);
+    });
+
+    retChecklist.markModified('groups');
+    retChecklist.save();
+
+    return retChecklist;
+}
+
+function insertPictures(pictures) {
+    var retPictures = [];
+    pictures.forEach(picture => {
+        var p = new Picture(picture)
+        p.save();
+        retPictures.push(p);
+    });
+
+    return retPictures;
+}
+
 function generateChecklist(qtd, modality) {
 
     for (let index = 1; index <= qtd; index++) {
-        var p = new Pictures();
+        var p = new Picture();
         p.category = 'Foto ' + index;
         p.number = index;
         p.save();
@@ -67,21 +198,21 @@ function generateChecklist(qtd, modality) {
     }
 
     modality.checklist = new Checklist();
-    modality.checklist.name = 'Checklist Veicular';
+    modality.checklist.title = 'Checklist Veicular';
     modality.checklist.active = true;
 
     for (let index = 1; index <= qtd; index++) {
-        var g = new ChecklistGroups();
+        var g = new ChecklistGroup();
         g.title = 'Grupo ' + index;
         g.number = index;
 
         for (let index = 1; index <= qtd; index++) {
-            var i = new ChecklistItens();
+            var i = new ChecklistItem();
             i.title = 'Item ' + index;
             i.number = index;
 
             for (let index = 1; index <= qtd; index++) {
-                var c = new ChecklistConditions();
+                var c = new ChecklistCondition();
                 c.number = index;
                 c.title = 'Condicao ' + index;
                 c.save();
