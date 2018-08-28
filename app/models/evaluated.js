@@ -19,6 +19,14 @@ const EvaluatedSchema = new mongoose.Schema({
             require: true
         }
     }],
+    evaluationDate: {
+        type: Date,
+        require: true
+    },
+    situation: {
+        type: String,
+        require: true
+    },
     createdAt: {
         type: Date,
         default: Date.now,
