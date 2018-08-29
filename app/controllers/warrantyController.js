@@ -3,7 +3,6 @@ const authMiddleware = require('../middlewares/auth');
 const Logger = require('../../modules/log');
 const Modality = require('../models/modality');
 const Vehicle = require('../models/vehicle');
-const Picture = require('../models/picture');
 const Company = require('../models/company');
 const User = require('../models/user');
 const Evaluated = require('../models/evaluated');
@@ -72,14 +71,7 @@ router.post('/', async (req, res) => {
             return res.status(400).send({ error: "Modalidade não encontrada" });
 
         var vehicleDB = await Vehicle.create(vehicle);
-        var eval = new Evaluated();
-        eval.user = userDB;
-        eval.company = companyDB;
-        eval.modality = modalityDB;
-        eval.vehicle = vehicleDB;
-        eval.evaluatedValues = evaluatedValues;
-        eval.evaluationDate = evaluationDate;
-        eval.situation = situation;
+        var eval = createModalityObject(userDB, companyDB, modalityDB, vehicleDB, evaluatedValues, evaluationDate, situation);
         await Evaluated.create(eval);
 
         res.send({ "id": eval.id });
@@ -89,6 +81,18 @@ router.post('/', async (req, res) => {
 });
 
 module.exports = app => app.use('/warranty', router);
+
+function createModalityObject(userDB, companyDB, modalityDB, vehicleDB, evaluatedValues, evaluationDate, situation) {
+    var eval = new Evaluated();
+    eval.user = userDB;
+    eval.company = companyDB;
+    eval.modality = modalityDB;
+    eval.vehicle = vehicleDB;
+    eval.evaluatedValues = evaluatedValues;
+    eval.evaluationDate = evaluationDate;
+    eval.situation = situation;
+    return eval;
+}
 
 function filterArrayDocs(evaluatedDocs, user, company, vin, plate) {
     var filteredEvaluations = [];

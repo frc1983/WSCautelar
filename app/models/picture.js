@@ -8,6 +8,7 @@ const PictureSchema = new mongoose.Schema({
     number: {
         type: Number,
         required: true,
+        unique: true
     },
     required: {
         type: Boolean,

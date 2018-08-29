@@ -119,7 +119,7 @@ router.delete('/:CNPJ/:number', async (req, res) => {
                 return Logger(res, { error: 'Modalidade nao encontrada' }, err);
             });
     } catch (err) {
-        return Logger(res, { error: 'Erro ao remover MOdalidade' }, err);
+        return Logger(res, { error: 'Erro ao remover Modalidade' }, err);
     }
 });
 

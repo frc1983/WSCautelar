@@ -1,11 +1,15 @@
 var express = require('express'),
   app = express(),
   bodyParser = require('body-parser'),
-  db = require('./database/index');
+  db = require('./database/index'),
+  fileUpload = require('express-fileupload');
 
-app.use(bodyParser.json({limit: '50mb', extended: true}));
-app.use(bodyParser.urlencoded({ limit: '50mb',extended: false }));
+app.use(bodyParser.json({ limit: '50mb', extended: true }));
+app.use(bodyParser.urlencoded({ limit: '50mb', extended: true, parameterLimit: 1000000 }));
 app.engine('html', require('ejs').renderFile);
+app.use(fileUpload({
+  limits: { fileSize: 5 * 1024 * 1024 }, abortOnLimit: true
+}));
 
 require('./app/controllers/index')(app);
 
