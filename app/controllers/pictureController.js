@@ -27,7 +27,7 @@ router.post('/', async (req, res) => {
                 return res.status(400).send({ error: err.message });
             });
     } catch (err) {
-        return Logger(res, { error: 'Erro ao salvar imagem' }, err);
+        return Logger(res, { error: 'Erro ao salvar imagem' }, err.stack);
     };
 });
 
@@ -47,7 +47,7 @@ router.put('/', async (req, res) => {
                 return res.status(400).send({ error: err.message });
             });
     } catch (err) {
-        return Logger(res, { error: 'Erro ao alterar imagem' }, err);
+        return Logger(res, { error: 'Erro ao alterar imagem' }, err.stack);
     };
 });
 
@@ -64,14 +64,14 @@ router.get('/:evaluatedId/:pictureId', async (req, res) => {
         //res.download(uploadFolder + evalPicture.path);
         res.status(200).send({ image: new Buffer(bitmap).toString('base64') });
     } catch (err) {
-        return Logger(res, { error: 'Erro ao buscar Imagens' }, err);
+        return Logger(res, { error: 'Erro ao buscar Imagens' }, err.stack);
     };
 });
 
 async function writeFile(req, savedImage, res) {
     await req.files.file.mv(uploadFolder + savedImage.path, async function (err) {
         if (err)
-            return Logger(res, { error: 'Erro ao enviar Imagem' }, err);
+            return Logger(res, { error: 'Erro ao enviar Imagem' }, err.stack);
         await EvaluatedPicture.findByIdAndUpdate(savedImage.id, savedImage);
         res.status(200).send();
     });
@@ -116,30 +116,28 @@ async function saveEvaluatedPicture(isNew, file, evaluatedId, pictureNumber) {
 }
 
 function getDatePath(evaluated) {
-    let date = createUploadsFolder();
+    createUploadsFolder(evaluated.evaluationDate);
 
     if (evaluated)
         return evaluated.evaluationDate.getFullYear() + "/" +
-            evaluated.evaluationDate.getMonth() + "/" +
-            evaluated.evaluationDate.getDay() + "/";
+            (evaluated.evaluationDate.getMonth() + 1) + "/" +
+            evaluated.evaluationDate.getDate() + "/";
 
-    return date.getFullYear() + "/" + date.getMonth() + "/" + date.getDay() + "/";
+    return date.getFullYear() + "/" + (date.getMonth() + 1) + "/" + date.getDate() + "/";
 
-    function createUploadsFolder() {
-        let date = new Date();
-        var dirYear = uploadFolder + "/" + date.getFullYear();
+    function createUploadsFolder(date) {
+        var dirYear = uploadFolder + date.getFullYear();
         if (!fs.existsSync(dirYear)) {
             fs.mkdirSync(dirYear);
         }
-        var dirMonth = dirYear + "/" + date.getMonth();
+        var dirMonth = dirYear + "/" + (date.getMonth() + 1);
         if (!fs.existsSync(dirMonth)) {
             fs.mkdirSync(dirMonth);
         }
-        var dirDay = dirMonth + "/" + date.getDay();
+        var dirDay = dirMonth + "/" + date.getDate();
         if (!fs.existsSync(dirDay)) {
             fs.mkdirSync(dirDay);
         }
-        return date;
     }
 }
 

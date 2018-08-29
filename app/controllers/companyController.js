@@ -17,7 +17,7 @@ router.get('/:cnpj?', async (req, res) => {
 
         res.send({ companies });
     } catch (err) {
-        return Logger(res, { error: 'Erro na consulta de Empresa' }, err);
+        return Logger(res, { error: 'Erro na consulta de Empresa' }, err.stack);
     }
 });
 
@@ -32,7 +32,7 @@ router.post('/', async (req, res) => {
 
         res.send({ company });
     } catch (err) {
-        return Logger(res, { error: 'Erro no cadastro de Empresa' }, err);
+        return Logger(res, { error: 'Erro no cadastro de Empresa' }, err.stack);
     }
 });
 
@@ -50,7 +50,7 @@ router.put('/', async (req, res) => {
 
         res.send({ findCompany });
     } catch (err) {
-        return Logger(res, { error: 'Erro na atualização de Empresa' }, err);
+        return Logger(res, { error: 'Erro na atualização de Empresa' }, err.stack);
     }
 });
 
@@ -65,7 +65,7 @@ router.delete('/:CNPJ', async (req, res) => {
                 res.status(200).send();
         });
     } catch (err) {
-        return Logger(res, { error: 'Erro ao remover Empresa' }, err);
+        return Logger(res, { error: 'Erro ao remover Empresa' }, err.stack);
     }
 });
 

@@ -52,7 +52,7 @@ router.get('/:cnpj?', async (req, res) => {
                 res.send({ modalities: modalities });
             });
     } catch (err) {
-        return Logger(res, { error: 'Erro ao buscar Modalidades' }, err);
+        return Logger(res, { error: 'Erro ao buscar Modalidades' }, err.stack);
     };
 });
 
@@ -75,7 +75,7 @@ router.post('/', async (req, res) => {
             }
         })
         .catch(function (err) {
-            return Logger(res, { error: err.message }, err);
+            return Logger(res, { error: err.message }, err.stack);
         });
 });
 
@@ -116,10 +116,10 @@ router.delete('/:CNPJ/:number', async (req, res) => {
                 res.status(200).send();
             })
             .catch(function (err) {
-                return Logger(res, { error: 'Modalidade nao encontrada' }, err);
+                return Logger(res, { error: 'Modalidade nao encontrada' }, err.stack);
             });
     } catch (err) {
-        return Logger(res, { error: 'Erro ao remover Modalidade' }, err);
+        return Logger(res, { error: 'Erro ao remover Modalidade' }, err.stack);
     }
 });
 

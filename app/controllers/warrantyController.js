@@ -25,7 +25,7 @@ router.post('/filter', async (req, res) => {
             .populate('modality')
             .exec(function (err, docs) {
                 if (err)
-                    return Logger(res, { error: 'Erro ao filtrar Vistorias' }, err);
+                    return Logger(res, { error: 'Erro ao filtrar Vistorias' }, err.stack);
 
                 var evaluatedDocs = [];
                 docs.filter(function (doc) {
@@ -43,7 +43,7 @@ router.post('/filter', async (req, res) => {
                 res.send({ documents: filteredEvaluations });
             });
     } catch (err) {
-        return Logger(res, { error: 'Erro ao buscar Vistorias' }, err);
+        return Logger(res, { error: 'Erro ao buscar Vistorias' }, err.stack);
     };
 });
 
@@ -76,7 +76,7 @@ router.post('/', async (req, res) => {
 
         res.send({ "id": eval.id });
     } catch (err) {
-        return Logger(res, { error: 'Erro ao buscar Modalidades' }, err);
+        return Logger(res, { error: 'Erro ao buscar Modalidades' }, err.stack);
     };
 });
 

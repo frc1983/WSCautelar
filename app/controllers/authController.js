@@ -42,7 +42,7 @@ router.post('/register', async (req, res) => {
             token: generateToken({ id: user.id }),
         });
     } catch (err) {
-        return Logger(res, { error: 'Erro de registro novo' }, err);
+        return Logger(res, { error: 'Erro de registro novo' }, err.stack);
     }
 });
 
@@ -76,7 +76,7 @@ router.put('/register', async (req, res) => {
             token: generateToken({ id: user.id }),
         });
     } catch (err) {
-        return Logger(res, { error: 'Erro de alteração de registro' }, err);
+        return Logger(res, { error: 'Erro de alteração de registro' }, err.stack);
     }
 });
 
@@ -102,7 +102,7 @@ router.post('/authenticate', async (req, res) => {
             token: generateToken({ id: user.id }),
         });
     } catch (err) {
-        return Logger(res, { error: 'Erro na autenticação' }, err);
+        return Logger(res, { error: 'Erro na autenticação' }, err.stack);
     }
 });
 
@@ -139,7 +139,7 @@ router.post('/forgot_password', async (req, res) => {
             return res.send();
         });
     } catch (err) {
-        return Logger(res, { error: 'Erro no "Esqueci senha' }, err);
+        return Logger(res, { error: 'Erro no "Esqueci senha' }, err.stack);
     }
 });
 
@@ -167,7 +167,7 @@ router.post('/reset_password', async (req, res) => {
         res.send();
 
     } catch (err) {
-        return Logger(res, { error: 'Erro no envio da nova senha' }, err);
+        return Logger(res, { error: 'Erro no envio da nova senha' }, err.stack);
     }
 });
 
