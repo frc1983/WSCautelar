@@ -60,6 +60,8 @@ router.get('/:evaluatedId/:pictureId', async (req, res) => {
             "picture": pictureId
         });
 
+        console.log('Upload', uploadFolder);
+        console.log('eval', evalPicture);
         var bitmap = fs.readFileSync(uploadFolder + evalPicture.path);
         //res.download(uploadFolder + evalPicture.path);
         res.status(200).send({ image: new Buffer(bitmap).toString('base64') });
