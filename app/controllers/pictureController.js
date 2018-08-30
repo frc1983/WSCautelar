@@ -60,8 +60,13 @@ router.get('/:evaluatedId/:pictureId', async (req, res) => {
             "picture": pictureId
         });
 
+
         console.log('Upload', uploadFolder);
         console.log('eval', evalPicture);
+
+        if (!evalPicture)
+            return res.status(400).send({ error: 'Imagem da vistoria nao encontrada: ' + evaluatedId + ' --- ' + pictureId });
+
         var bitmap = fs.readFileSync(uploadFolder + evalPicture.path);
         //res.download(uploadFolder + evalPicture.path);
         res.status(200).send({ image: new Buffer(bitmap).toString('base64') });
