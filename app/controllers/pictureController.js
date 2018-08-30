@@ -58,8 +58,7 @@ router.get('/:evaluatedId/:pictureId', async (req, res) => {
         var evalPicture = await EvaluatedPicture.findOne({
             "evaluated": evaluatedId,
             "picture": pictureId
-        });
-
+        }).sort({ createdAt: -1 });
 
         console.log('Upload', uploadFolder);
         console.log('eval', evalPicture);
@@ -79,7 +78,7 @@ async function writeFile(req, savedImage, res) {
     await req.files.file.mv(uploadFolder + savedImage.path, async function (err) {
         if (err)
             return Logger(res, { error: 'Erro ao enviar Imagem' }, err.stack);
-            
+
         await EvaluatedPicture.findByIdAndUpdate(savedImage.id, savedImage);
         res.status(200).send({ created: savedImage });
     });
