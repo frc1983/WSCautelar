@@ -58,7 +58,7 @@ router.get('/:evaluatedId/:pictureId', async (req, res) => {
         var evalPicture = await EvaluatedPicture.findOne({
             "evaluated": evaluatedId,
             "picture": pictureId
-        }).sort({ createdAt: -1 });
+        }).sort({ createdAt: -1 }); 
 
         console.log('Upload', uploadFolder);
         console.log('eval', evalPicture);
