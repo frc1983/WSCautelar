@@ -80,7 +80,7 @@ async function writeFile(req, savedImage, res) {
         if (err)
             return Logger(res, { error: 'Erro ao enviar Imagem' }, err.stack);
         await EvaluatedPicture.findByIdAndUpdate(savedImage.id, savedImage);
-        res.status(200).send();
+        res.status(200).send({ created: savedImage });
     });
 }
 
