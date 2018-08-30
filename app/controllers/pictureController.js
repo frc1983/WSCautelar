@@ -9,7 +9,7 @@ const Evaluated = require('../models/evaluated');
 const router = express.Router();
 const uploadFolder = __dirname + '/../uploads/';
 
-router.use(authMiddleware);
+//router.use(authMiddleware);
 
 router.post('/', async (req, res) => {
     const { evaluatedId, pictureNumber } = req.body;
