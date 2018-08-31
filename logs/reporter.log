@@ -1,0 +1,511 @@
+2018-08-30T22:21:51.160Z - info: Initializing jsreport@2.2.0 in development mode using configuration file: none
+2018-08-30T22:21:51.161Z - info: Searching for available extensions in c:\Projetos\TIMEPRO\WSCautelar\
+2018-08-30T22:21:51.171Z - info: Extensions location cache contains up to date information, skipping crawling in c:\Projetos\TIMEPRO\WSCautelar\
+2018-08-30T22:21:51.240Z - info: Found 31 extensions
+2018-08-30T22:21:51.288Z - debug: Writing extension locations cache to C:\Users\FABIO~1.COS\AppData\Local\Temp\jsreport\core\locations.json
+2018-08-30T22:21:51.290Z - debug: Discovered 31 extensions
+2018-08-30T22:21:51.333Z - info: Setting process based strategy for rendering. Please visit http://jsreport.net/learn/configuration for information how to get more performance.
+2018-08-30T22:21:51.340Z - info: Using extension handlebars
+2018-08-30T22:21:51.345Z - info: Using extension import-export
+2018-08-30T22:21:51.935Z - info: Using extension templates
+2018-08-30T22:21:51.948Z - info: Using extension jsrender
+2018-08-30T22:21:51.950Z - info: Using extension authentication
+2018-08-30T22:21:52.048Z - debug: Extension authentication was disabled
+2018-08-30T22:21:52.048Z - info: Using extension freeze
+2018-08-30T22:21:52.052Z - info: Using extension cli
+2018-08-30T22:21:52.054Z - info: Using extension express
+2018-08-30T22:21:52.372Z - info: Using extension debug
+2018-08-30T22:21:52.375Z - info: Using extension tags
+2018-08-30T22:21:52.385Z - info: Using extension data
+2018-08-30T22:21:52.393Z - info: Using extension fs-store
+2018-08-30T22:21:52.858Z - debug: Extension fs-store was disabled
+2018-08-30T22:21:52.859Z - info: Using extension authorization
+2018-08-30T22:21:52.863Z - debug: Extension authorization was disabled
+2018-08-30T22:21:52.863Z - info: Using extension html-to-xlsx
+2018-08-30T22:21:53.158Z - info: html-to-xlsx detected chrome as available html engine
+2018-08-30T22:21:53.158Z - info: Using extension child-templates
+2018-08-30T22:21:53.167Z - info: Using extension browser-client
+2018-08-30T22:21:53.170Z - info: Using extension chrome-pdf
+2018-08-30T22:21:53.180Z - info: Using extension pdf-utils
+2018-08-30T22:21:53.184Z - info: Using extension version-control
+2018-08-30T22:21:53.368Z - info: Using extension reports
+2018-08-30T22:21:53.374Z - info: Using extension text
+2018-08-30T22:21:53.376Z - info: Using extension base
+2018-08-30T22:21:53.379Z - info: Using extension studio
+2018-08-30T22:21:53.415Z - info: Using extension licensing
+2018-08-30T22:21:53.581Z - info: Using extension scripts
+2018-08-30T22:21:53.599Z - info: Using extension assets
+2018-08-30T22:21:53.662Z - info: Using extension scheduling
+2018-08-30T22:21:53.782Z - info: Using extension xlsx
+2018-08-30T22:21:53.934Z - info: Using extension sample-template
+2018-08-30T22:21:53.940Z - debug: Creating samples is disabled
+2018-08-30T22:21:53.941Z - info: Using extension resources
+2018-08-30T22:21:53.948Z - info: Using extension public-templates
+2018-08-30T22:21:53.977Z - debug: Extension public-templates was disabled
+2018-08-30T22:21:54.081Z - info: Configuring routes for existing express app.
+2018-08-30T22:21:54.083Z - error: Error occured during reporter init TypeError: app.enable is not a function
+    at configureExpressApp (c:\Projetos\TIMEPRO\WSCautelar\node_modules\jsreport-express\lib\reporter.express.js:134:9)
+    at Object.reporter.initializeListeners.add (c:\Projetos\TIMEPRO\WSCautelar\node_modules\jsreport-express\lib\reporter.express.js:251:7)
+    at c:\Projetos\TIMEPRO\WSCautelar\node_modules\listener-collection\lib\listenerCollection.js:171:33
+    at c:\Projetos\TIMEPRO\WSCautelar\node_modules\listener-collection\lib\listenerCollection.js:151:16
+    at tryCatcher (c:\Projetos\TIMEPRO\WSCautelar\node_modules\bluebird\js\release\util.js:16:23)
+    at Promise._settlePromiseFromHandler (c:\Projetos\TIMEPRO\WSCautelar\node_modules\bluebird\js\release\promise.js:512:31)
+    at Promise._settlePromise (c:\Projetos\TIMEPRO\WSCautelar\node_modules\bluebird\js\release\promise.js:569:18)
+    at Promise._settlePromise0 (c:\Projetos\TIMEPRO\WSCautelar\node_modules\bluebird\js\release\promise.js:614:10)
+    at Promise._settlePromises (c:\Projetos\TIMEPRO\WSCautelar\node_modules\bluebird\js\release\promise.js:693:18)
+    at Async._drainQueue (c:\Projetos\TIMEPRO\WSCautelar\node_modules\bluebird\js\release\async.js:133:16)
+    at Async._drainQueues (c:\Projetos\TIMEPRO\WSCautelar\node_modules\bluebird\js\release\async.js:143:10)
+    at Immediate.Async.drainQueues (c:\Projetos\TIMEPRO\WSCautelar\node_modules\bluebird\js\release\async.js:17:14)
+    at runCallback (timers.js:763:18)
+    at tryOnImmediate (timers.js:734:5)
+    at processImmediate (timers.js:716:5)
+2018-08-30T22:23:36.643Z - info: Initializing jsreport@2.2.0 in development mode using configuration file: none
+2018-08-30T22:23:36.648Z - info: Searching for available extensions in c:\Projetos\TIMEPRO\WSCautelar\
+2018-08-30T22:23:36.667Z - info: Extensions location cache contains up to date information, skipping crawling in c:\Projetos\TIMEPRO\WSCautelar\
+2018-08-30T22:23:36.741Z - info: Found 31 extensions
+2018-08-30T22:23:36.790Z - debug: Writing extension locations cache to C:\Users\FABIO~1.COS\AppData\Local\Temp\jsreport\core\locations.json
+2018-08-30T22:23:36.791Z - debug: Discovered 31 extensions
+2018-08-30T22:23:36.830Z - info: Setting process based strategy for rendering. Please visit http://jsreport.net/learn/configuration for information how to get more performance.
+2018-08-30T22:23:36.839Z - info: Using extension handlebars
+2018-08-30T22:23:36.844Z - info: Using extension import-export
+2018-08-30T22:23:37.258Z - info: Using extension templates
+2018-08-30T22:23:37.269Z - info: Using extension jsrender
+2018-08-30T22:23:37.271Z - info: Using extension authentication
+2018-08-30T22:23:37.360Z - debug: Extension authentication was disabled
+2018-08-30T22:23:37.360Z - info: Using extension freeze
+2018-08-30T22:23:37.364Z - info: Using extension cli
+2018-08-30T22:23:37.365Z - info: Using extension express
+2018-08-30T22:23:37.619Z - info: Using extension debug
+2018-08-30T22:23:37.623Z - info: Using extension tags
+2018-08-30T22:23:37.630Z - info: Using extension data
+2018-08-30T22:23:37.635Z - info: Using extension fs-store
+2018-08-30T22:23:38.054Z - debug: Extension fs-store was disabled
+2018-08-30T22:23:38.054Z - info: Using extension authorization
+2018-08-30T22:23:38.058Z - debug: Extension authorization was disabled
+2018-08-30T22:23:38.058Z - info: Using extension html-to-xlsx
+2018-08-30T22:23:38.345Z - info: html-to-xlsx detected chrome as available html engine
+2018-08-30T22:23:38.345Z - info: Using extension child-templates
+2018-08-30T22:23:38.355Z - info: Using extension browser-client
+2018-08-30T22:23:38.359Z - info: Using extension chrome-pdf
+2018-08-30T22:23:38.370Z - info: Using extension pdf-utils
+2018-08-30T22:23:38.373Z - info: Using extension version-control
+2018-08-30T22:23:38.453Z - info: Using extension reports
+2018-08-30T22:23:38.461Z - info: Using extension text
+2018-08-30T22:23:38.461Z - info: Using extension base
+2018-08-30T22:23:38.464Z - info: Using extension studio
+2018-08-30T22:23:38.489Z - info: Using extension licensing
+2018-08-30T22:23:38.540Z - info: Using extension scripts
+2018-08-30T22:23:38.546Z - info: Using extension assets
+2018-08-30T22:23:38.571Z - info: Using extension scheduling
+2018-08-30T22:23:38.620Z - info: Using extension xlsx
+2018-08-30T22:23:38.725Z - info: Using extension sample-template
+2018-08-30T22:23:38.728Z - debug: Creating samples is disabled
+2018-08-30T22:23:38.728Z - info: Using extension resources
+2018-08-30T22:23:38.730Z - info: Using extension public-templates
+2018-08-30T22:23:38.740Z - debug: Extension public-templates was disabled
+2018-08-30T22:23:38.822Z - info: Configuring routes for existing express app.
+2018-08-30T22:26:09.549Z - info: Initializing jsreport@2.2.0 in development mode using configuration file: none
+2018-08-30T22:26:09.550Z - info: Searching for available extensions in c:\Projetos\TIMEPRO\WSCautelar\
+2018-08-30T22:26:09.556Z - info: Extensions location cache contains up to date information, skipping crawling in c:\Projetos\TIMEPRO\WSCautelar\
+2018-08-30T22:26:09.622Z - info: Found 31 extensions
+2018-08-30T22:26:09.655Z - debug: Writing extension locations cache to C:\Users\FABIO~1.COS\AppData\Local\Temp\jsreport\core\locations.json
+2018-08-30T22:26:09.657Z - debug: Discovered 31 extensions
+2018-08-30T22:26:09.694Z - info: Setting process based strategy for rendering. Please visit http://jsreport.net/learn/configuration for information how to get more performance.
+2018-08-30T22:26:09.699Z - info: Using extension handlebars
+2018-08-30T22:26:09.703Z - info: Using extension import-export
+2018-08-30T22:26:10.050Z - info: Using extension templates
+2018-08-30T22:26:10.061Z - info: Using extension jsrender
+2018-08-30T22:26:10.063Z - info: Using extension authentication
+2018-08-30T22:26:10.121Z - debug: Extension authentication was disabled
+2018-08-30T22:26:10.121Z - info: Using extension freeze
+2018-08-30T22:26:10.126Z - info: Using extension cli
+2018-08-30T22:26:10.129Z - info: Using extension express
+2018-08-30T22:26:10.328Z - info: Using extension debug
+2018-08-30T22:26:10.330Z - info: Using extension tags
+2018-08-30T22:26:10.335Z - info: Using extension data
+2018-08-30T22:26:10.339Z - info: Using extension fs-store
+2018-08-30T22:26:10.673Z - debug: Extension fs-store was disabled
+2018-08-30T22:26:10.673Z - info: Using extension authorization
+2018-08-30T22:26:10.676Z - debug: Extension authorization was disabled
+2018-08-30T22:26:10.677Z - info: Using extension html-to-xlsx
+2018-08-30T22:26:10.896Z - info: html-to-xlsx detected chrome as available html engine
+2018-08-30T22:26:10.897Z - info: Using extension child-templates
+2018-08-30T22:26:10.903Z - info: Using extension browser-client
+2018-08-30T22:26:10.907Z - info: Using extension chrome-pdf
+2018-08-30T22:26:10.914Z - info: Using extension pdf-utils
+2018-08-30T22:26:10.917Z - info: Using extension version-control
+2018-08-30T22:26:10.981Z - info: Using extension reports
+2018-08-30T22:26:10.986Z - info: Using extension text
+2018-08-30T22:26:10.987Z - info: Using extension base
+2018-08-30T22:26:10.989Z - info: Using extension studio
+2018-08-30T22:26:11.010Z - info: Using extension licensing
+2018-08-30T22:26:11.048Z - info: Using extension scripts
+2018-08-30T22:26:11.053Z - info: Using extension assets
+2018-08-30T22:26:11.073Z - info: Using extension scheduling
+2018-08-30T22:26:11.113Z - info: Using extension xlsx
+2018-08-30T22:26:11.199Z - info: Using extension sample-template
+2018-08-30T22:26:11.202Z - debug: Creating samples is disabled
+2018-08-30T22:26:11.202Z - info: Using extension resources
+2018-08-30T22:26:11.204Z - info: Using extension public-templates
+2018-08-30T22:26:11.210Z - debug: Extension public-templates was disabled
+2018-08-30T22:26:11.282Z - info: Configuring routes for existing express app.
+2018-08-30T22:26:11.300Z - info: Using existing server instance.
+2018-08-30T22:26:11.303Z - info: Verifying license key free
+2018-08-30T22:26:11.304Z - info: Using free license
+2018-08-30T22:26:11.311Z - info: reporter initialized
+2018-08-30T22:27:12.395Z - info: Initializing jsreport@2.2.0 in development mode using configuration file: none
+2018-08-30T22:27:12.396Z - info: Searching for available extensions in c:\Projetos\TIMEPRO\WSCautelar\
+2018-08-30T22:27:12.402Z - info: Extensions location cache contains up to date information, skipping crawling in c:\Projetos\TIMEPRO\WSCautelar\
+2018-08-30T22:27:12.464Z - info: Found 31 extensions
+2018-08-30T22:27:12.496Z - debug: Writing extension locations cache to C:\Users\FABIO~1.COS\AppData\Local\Temp\jsreport\core\locations.json
+2018-08-30T22:27:12.498Z - debug: Discovered 31 extensions
+2018-08-30T22:27:12.535Z - info: Setting process based strategy for rendering. Please visit http://jsreport.net/learn/configuration for information how to get more performance.
+2018-08-30T22:27:12.540Z - info: Using extension handlebars
+2018-08-30T22:27:12.545Z - info: Using extension import-export
+2018-08-30T22:27:12.859Z - info: Using extension templates
+2018-08-30T22:27:12.865Z - info: Using extension jsrender
+2018-08-30T22:27:12.866Z - info: Using extension authentication
+2018-08-30T22:27:12.927Z - debug: Extension authentication was disabled
+2018-08-30T22:27:12.927Z - info: Using extension freeze
+2018-08-30T22:27:12.932Z - info: Using extension cli
+2018-08-30T22:27:12.933Z - info: Using extension express
+2018-08-30T22:27:13.116Z - info: Using extension debug
+2018-08-30T22:27:13.119Z - info: Using extension tags
+2018-08-30T22:27:13.125Z - info: Using extension data
+2018-08-30T22:27:13.130Z - info: Using extension fs-store
+2018-08-30T22:27:13.466Z - debug: Extension fs-store was disabled
+2018-08-30T22:27:13.467Z - info: Using extension authorization
+2018-08-30T22:27:13.471Z - debug: Extension authorization was disabled
+2018-08-30T22:27:13.471Z - info: Using extension html-to-xlsx
+2018-08-30T22:27:13.696Z - info: html-to-xlsx detected chrome as available html engine
+2018-08-30T22:27:13.696Z - info: Using extension child-templates
+2018-08-30T22:27:13.704Z - info: Using extension browser-client
+2018-08-30T22:27:13.707Z - info: Using extension chrome-pdf
+2018-08-30T22:27:13.715Z - info: Using extension pdf-utils
+2018-08-30T22:27:13.718Z - info: Using extension version-control
+2018-08-30T22:27:13.789Z - info: Using extension reports
+2018-08-30T22:27:13.795Z - info: Using extension text
+2018-08-30T22:27:13.796Z - info: Using extension base
+2018-08-30T22:27:13.798Z - info: Using extension studio
+2018-08-30T22:27:13.821Z - info: Using extension licensing
+2018-08-30T22:27:13.863Z - info: Using extension scripts
+2018-08-30T22:27:13.868Z - info: Using extension assets
+2018-08-30T22:27:13.888Z - info: Using extension scheduling
+2018-08-30T22:27:13.928Z - info: Using extension xlsx
+2018-08-30T22:27:14.016Z - info: Using extension sample-template
+2018-08-30T22:27:14.019Z - debug: Creating samples is disabled
+2018-08-30T22:27:14.019Z - info: Using extension resources
+2018-08-30T22:27:14.021Z - info: Using extension public-templates
+2018-08-30T22:27:14.027Z - debug: Extension public-templates was disabled
+2018-08-30T22:27:14.058Z - info: Configuring routes for existing express app.
+2018-08-30T22:27:14.071Z - info: Using existing server instance.
+2018-08-30T22:27:14.074Z - info: Verifying license key free
+2018-08-30T22:27:14.075Z - info: Using free license
+2018-08-30T22:27:14.080Z - info: reporter initialized
+2018-08-30T22:27:38.271Z - info: Initializing jsreport@2.2.0 in development mode using configuration file: none
+2018-08-30T22:27:38.272Z - info: Searching for available extensions in c:\Projetos\TIMEPRO\WSCautelar\
+2018-08-30T22:27:38.278Z - info: Extensions location cache contains up to date information, skipping crawling in c:\Projetos\TIMEPRO\WSCautelar\
+2018-08-30T22:27:38.338Z - info: Found 31 extensions
+2018-08-30T22:27:38.370Z - debug: Writing extension locations cache to C:\Users\FABIO~1.COS\AppData\Local\Temp\jsreport\core\locations.json
+2018-08-30T22:27:38.371Z - debug: Discovered 31 extensions
+2018-08-30T22:27:38.408Z - info: Setting process based strategy for rendering. Please visit http://jsreport.net/learn/configuration for information how to get more performance.
+2018-08-30T22:27:38.414Z - info: Using extension handlebars
+2018-08-30T22:27:38.420Z - info: Using extension import-export
+2018-08-30T22:27:38.743Z - info: Using extension templates
+2018-08-30T22:27:38.751Z - info: Using extension jsrender
+2018-08-30T22:27:38.752Z - info: Using extension authentication
+2018-08-30T22:27:38.821Z - debug: Extension authentication was disabled
+2018-08-30T22:27:38.822Z - info: Using extension freeze
+2018-08-30T22:27:38.825Z - info: Using extension cli
+2018-08-30T22:27:38.826Z - info: Using extension express
+2018-08-30T22:27:39.009Z - info: Using extension debug
+2018-08-30T22:27:39.011Z - info: Using extension tags
+2018-08-30T22:27:39.017Z - info: Using extension data
+2018-08-30T22:27:39.021Z - info: Using extension fs-store
+2018-08-30T22:27:39.354Z - debug: Extension fs-store was disabled
+2018-08-30T22:27:39.354Z - info: Using extension authorization
+2018-08-30T22:27:39.359Z - debug: Extension authorization was disabled
+2018-08-30T22:27:39.359Z - info: Using extension html-to-xlsx
+2018-08-30T22:27:39.575Z - info: html-to-xlsx detected chrome as available html engine
+2018-08-30T22:27:39.576Z - info: Using extension child-templates
+2018-08-30T22:27:39.583Z - info: Using extension browser-client
+2018-08-30T22:27:39.586Z - info: Using extension chrome-pdf
+2018-08-30T22:27:39.594Z - info: Using extension pdf-utils
+2018-08-30T22:27:39.596Z - info: Using extension version-control
+2018-08-30T22:27:39.665Z - info: Using extension reports
+2018-08-30T22:27:39.672Z - info: Using extension text
+2018-08-30T22:27:39.674Z - info: Using extension base
+2018-08-30T22:27:39.676Z - info: Using extension studio
+2018-08-30T22:27:39.702Z - info: Using extension licensing
+2018-08-30T22:27:39.740Z - info: Using extension scripts
+2018-08-30T22:27:39.746Z - info: Using extension assets
+2018-08-30T22:27:39.764Z - info: Using extension scheduling
+2018-08-30T22:27:39.805Z - info: Using extension xlsx
+2018-08-30T22:27:39.925Z - info: Using extension sample-template
+2018-08-30T22:27:39.929Z - debug: Creating samples is disabled
+2018-08-30T22:27:39.929Z - info: Using extension resources
+2018-08-30T22:27:39.932Z - info: Using extension public-templates
+2018-08-30T22:27:39.940Z - debug: Extension public-templates was disabled
+2018-08-30T22:27:40.025Z - info: Configuring routes for existing express app.
+2018-08-30T22:27:40.038Z - info: Using existing server instance.
+2018-08-30T22:27:40.041Z - info: Verifying license key free
+2018-08-30T22:27:40.043Z - info: Using free license
+2018-08-30T22:27:40.049Z - info: reporter initialized
+2018-08-30T22:27:51.138Z - info: Starting rendering request 1 (user: null)
+2018-08-30T22:27:51.196Z - info: Rendering anonymous template { recipe: chrome-pdf, engine: handlebars }
+2018-08-30T22:27:51.200Z - debug: Inline data specified.
+2018-08-30T22:27:51.203Z - debug: Resources not defined for this template.
+2018-08-30T22:27:51.210Z - debug: Base url not specified, skipping its injection.
+2018-08-30T22:27:51.210Z - debug: Rendering engine handlebars
+2018-08-30T22:28:01.225Z - warn: Error when processing render request Timeout error during executing script Error: Timeout error during executing script
+    at Timeout._onTimeout (c:\Projetos\TIMEPRO\WSCautelar\node_modules\script-manager\lib\manager-processes.js:25:8)
+    at ontimeout (timers.js:466:11)
+    at Timer.unrefdHandle (timers.js:578:5)
+2018-08-30T22:46:24.611Z - info: Initializing jsreport@2.2.0 in development mode using configuration file: none
+2018-08-30T22:46:24.612Z - info: Searching for available extensions in c:\Projetos\TIMEPRO\WSCautelar\
+2018-08-30T22:46:24.617Z - info: Initializing jsreport@2.1.1 in development mode
+2018-08-30T22:46:24.631Z - info: Setting process based strategy for rendering. Please visit http://jsreport.net/learn/configuration for information how to get more performance.
+2018-08-30T22:46:24.639Z - info: Using extension ejs
+2018-08-30T22:46:24.642Z - info: Using extension templates
+2018-08-30T22:46:24.642Z - info: Using extension express
+2018-08-30T22:46:24.673Z - info: Configuring routes for existing express app.
+2018-08-30T22:46:24.676Z - info: reporter initialized
+2018-08-30T22:46:24.678Z - info: Extensions location cache C:\Users\FABIO~1.COS\AppData\Local\Temp\jsreport\core\locations.json contains older information, crawling
+2018-08-30T22:46:26.187Z - info: Found 32 extensions
+2018-08-30T22:46:26.240Z - debug: Writing extension locations cache to C:\Users\FABIO~1.COS\AppData\Local\Temp\jsreport\core\locations.json
+2018-08-30T22:46:26.242Z - debug: Discovered 32 extensions
+2018-08-30T22:46:26.278Z - info: Setting process based strategy for rendering. Please visit http://jsreport.net/learn/configuration for information how to get more performance.
+2018-08-30T22:46:26.281Z - info: Using extension import-export
+2018-08-30T22:46:26.576Z - info: Using extension tags
+2018-08-30T22:46:26.582Z - info: Using extension templates
+2018-08-30T22:46:26.583Z - info: Using extension jsrender
+2018-08-30T22:46:26.585Z - info: Using extension authentication
+2018-08-30T22:46:26.654Z - debug: Extension authentication was disabled
+2018-08-30T22:46:26.655Z - info: Using extension handlebars
+2018-08-30T22:46:26.656Z - info: Using extension cli
+2018-08-30T22:46:26.658Z - info: Using extension freeze
+2018-08-30T22:46:26.660Z - info: Using extension debug
+2018-08-30T22:46:26.662Z - info: Using extension ejs
+2018-08-30T22:46:26.663Z - info: Using extension express
+2018-08-30T22:46:26.666Z - info: Using extension pdf-utils
+2018-08-30T22:46:26.669Z - info: Using extension data
+2018-08-30T22:46:26.673Z - info: Using extension chrome-pdf
+2018-08-30T22:46:26.791Z - info: Using extension html-to-xlsx
+2018-08-30T22:46:26.907Z - info: html-to-xlsx detected chrome as available html engine
+2018-08-30T22:46:26.908Z - info: Using extension child-templates
+2018-08-30T22:46:26.915Z - info: Using extension browser-client
+2018-08-30T22:46:26.917Z - info: Using extension licensing
+2018-08-30T22:46:26.961Z - info: Using extension authorization
+2018-08-30T22:46:26.964Z - debug: Extension authorization was disabled
+2018-08-30T22:46:26.964Z - info: Using extension version-control
+2018-08-30T22:46:27.036Z - info: Using extension reports
+2018-08-30T22:46:27.041Z - info: Using extension text
+2018-08-30T22:46:27.042Z - info: Using extension base
+2018-08-30T22:46:27.044Z - info: Using extension studio
+2018-08-30T22:46:27.069Z - info: Using extension fs-store
+2018-08-30T22:46:27.391Z - debug: Extension fs-store was disabled
+2018-08-30T22:46:27.391Z - info: Using extension scripts
+2018-08-30T22:46:27.396Z - info: Using extension assets
+2018-08-30T22:46:27.415Z - info: Using extension scheduling
+2018-08-30T22:46:27.456Z - info: Using extension xlsx
+2018-08-30T22:46:27.546Z - info: Using extension sample-template
+2018-08-30T22:46:27.549Z - debug: Creating samples is disabled
+2018-08-30T22:46:27.550Z - info: Using extension resources
+2018-08-30T22:46:27.553Z - info: Using extension public-templates
+2018-08-30T22:46:27.560Z - debug: Extension public-templates was disabled
+2018-08-30T22:46:27.575Z - info: Configuring routes for existing express app.
+2018-08-30T22:46:27.594Z - info: Verifying license key free
+2018-08-30T22:46:27.595Z - info: Using free license
+2018-08-30T22:46:27.600Z - info: reporter initialized
+2018-08-30T22:46:32.891Z - info: Starting rendering request 1 (user: null)
+2018-08-30T22:46:32.892Z - info: Rendering anonymous template { recipe: chrome-pdf, engine: ejs }
+2018-08-30T22:46:32.893Z - debug: Rendering engine ejs
+2018-08-30T22:46:42.911Z - warn: Error when processing render request Timeout error during executing script Error: Timeout error during executing script
+    at Timeout._onTimeout (c:\Projetos\TIMEPRO\WSCautelar\node_modules\script-manager\lib\manager-processes.js:25:8)
+    at ontimeout (timers.js:466:11)
+    at Timer.unrefdHandle (timers.js:578:5)
+2018-08-30T22:47:02.431Z - info: Starting rendering request 2 (user: null)
+2018-08-30T22:47:02.433Z - info: Rendering anonymous template { recipe: chrome-pdf, engine: ejs }
+2018-08-30T22:47:02.435Z - debug: Rendering engine ejs
+2018-08-30T22:47:12.454Z - warn: Error when processing render request Timeout error during executing script Error: Timeout error during executing script
+    at Timeout._onTimeout (c:\Projetos\TIMEPRO\WSCautelar\node_modules\script-manager\lib\manager-processes.js:25:8)
+    at ontimeout (timers.js:466:11)
+    at Timer.unrefdHandle (timers.js:578:5)
+2018-08-31T10:12:17.279Z - info: Initializing jsreport@2.2.0 in development mode using configuration file: none
+2018-08-31T10:12:17.279Z - info: Searching for available extensions in c:\Projetos\TIMEPRO\WSCautelar\
+2018-08-31T10:12:17.286Z - info: Initializing jsreport@2.1.1 in development mode
+2018-08-31T10:12:17.300Z - info: Setting process based strategy for rendering. Please visit http://jsreport.net/learn/configuration for information how to get more performance.
+2018-08-31T10:12:17.309Z - info: Using extension ejs
+2018-08-31T10:12:17.311Z - info: Using extension templates
+2018-08-31T10:12:17.312Z - info: Using extension express
+2018-08-31T10:12:17.345Z - info: Configuring routes for existing express app.
+2018-08-31T10:12:17.348Z - info: Using existing server instance.
+2018-08-31T10:12:17.348Z - info: reporter initialized
+2018-08-31T10:12:17.352Z - info: Extensions location cache contains up to date information, skipping crawling in c:\Projetos\TIMEPRO\WSCautelar\
+2018-08-31T10:12:17.449Z - info: Found 32 extensions
+2018-08-31T10:12:17.482Z - debug: Writing extension locations cache to C:\Users\FABIO~1.COS\AppData\Local\Temp\jsreport\core\locations.json
+2018-08-31T10:12:17.483Z - debug: Discovered 32 extensions
+2018-08-31T10:12:17.519Z - info: Setting process based strategy for rendering. Please visit http://jsreport.net/learn/configuration for information how to get more performance.
+2018-08-31T10:12:17.521Z - info: Using extension import-export
+2018-08-31T10:12:17.934Z - info: Using extension tags
+2018-08-31T10:12:17.941Z - info: Using extension templates
+2018-08-31T10:12:17.942Z - info: Using extension jsrender
+2018-08-31T10:12:17.943Z - info: Using extension authentication
+2018-08-31T10:12:18.025Z - debug: Extension authentication was disabled
+2018-08-31T10:12:18.025Z - info: Using extension handlebars
+2018-08-31T10:12:18.027Z - info: Using extension cli
+2018-08-31T10:12:18.029Z - info: Using extension freeze
+2018-08-31T10:12:18.031Z - info: Using extension debug
+2018-08-31T10:12:18.034Z - info: Using extension ejs
+2018-08-31T10:12:18.034Z - info: Using extension express
+2018-08-31T10:12:18.037Z - info: Using extension pdf-utils
+2018-08-31T10:12:18.040Z - info: Using extension data
+2018-08-31T10:12:18.047Z - info: Using extension chrome-pdf
+2018-08-31T10:12:18.219Z - info: Using extension html-to-xlsx
+2018-08-31T10:12:18.365Z - info: html-to-xlsx detected chrome as available html engine
+2018-08-31T10:12:18.365Z - info: Using extension child-templates
+2018-08-31T10:12:18.376Z - info: Using extension browser-client
+2018-08-31T10:12:18.380Z - info: Using extension licensing
+2018-08-31T10:12:18.429Z - info: Using extension authorization
+2018-08-31T10:12:18.434Z - debug: Extension authorization was disabled
+2018-08-31T10:12:18.434Z - info: Using extension version-control
+2018-08-31T10:12:18.532Z - info: Using extension reports
+2018-08-31T10:12:18.539Z - info: Using extension text
+2018-08-31T10:12:18.541Z - info: Using extension base
+2018-08-31T10:12:18.543Z - info: Using extension studio
+2018-08-31T10:12:18.574Z - info: Using extension fs-store
+2018-08-31T10:12:19.046Z - debug: Extension fs-store was disabled
+2018-08-31T10:12:19.046Z - info: Using extension scripts
+2018-08-31T10:12:19.052Z - info: Using extension assets
+2018-08-31T10:12:19.079Z - info: Using extension scheduling
+2018-08-31T10:12:19.131Z - info: Using extension xlsx
+2018-08-31T10:12:19.250Z - info: Using extension sample-template
+2018-08-31T10:12:19.253Z - debug: Creating samples is disabled
+2018-08-31T10:12:19.253Z - info: Using extension resources
+2018-08-31T10:12:19.255Z - info: Using extension public-templates
+2018-08-31T10:12:19.264Z - debug: Extension public-templates was disabled
+2018-08-31T10:12:19.332Z - info: Configuring routes for existing express app.
+2018-08-31T10:12:19.375Z - info: Verifying license key free
+2018-08-31T10:12:19.376Z - info: Using free license
+2018-08-31T10:12:19.384Z - info: reporter initialized
+2018-08-31T10:17:57.660Z - info: Initializing jsreport@2.2.0 in development mode using configuration file: none
+2018-08-31T10:17:57.660Z - info: Searching for available extensions in c:\Projetos\TIMEPRO\WSCautelar\
+2018-08-31T10:17:57.665Z - info: Initializing jsreport@2.1.1 in development mode
+2018-08-31T10:17:57.680Z - info: Setting process based strategy for rendering. Please visit http://jsreport.net/learn/configuration for information how to get more performance.
+2018-08-31T10:17:57.688Z - info: Using extension ejs
+2018-08-31T10:17:57.690Z - info: Using extension templates
+2018-08-31T10:17:57.690Z - info: Using extension express
+2018-08-31T10:17:57.724Z - info: Configuring routes for existing express app.
+2018-08-31T10:17:57.726Z - info: Using existing server instance.
+2018-08-31T10:17:57.727Z - info: reporter initialized
+2018-08-31T10:17:57.729Z - info: Extensions location cache contains up to date information, skipping crawling in c:\Projetos\TIMEPRO\WSCautelar\
+2018-08-31T10:17:57.789Z - info: Found 32 extensions
+2018-08-31T10:17:57.818Z - debug: Writing extension locations cache to C:\Users\FABIO~1.COS\AppData\Local\Temp\jsreport\core\locations.json
+2018-08-31T10:17:57.821Z - debug: Discovered 32 extensions
+2018-08-31T10:17:57.856Z - info: Setting process based strategy for rendering. Please visit http://jsreport.net/learn/configuration for information how to get more performance.
+2018-08-31T10:17:57.859Z - info: Using extension import-export
+2018-08-31T10:17:58.155Z - info: Using extension tags
+2018-08-31T10:17:58.161Z - info: Using extension templates
+2018-08-31T10:17:58.161Z - info: Using extension jsrender
+2018-08-31T10:17:58.163Z - info: Using extension authentication
+2018-08-31T10:17:58.221Z - debug: Extension authentication was disabled
+2018-08-31T10:17:58.221Z - info: Using extension handlebars
+2018-08-31T10:17:58.223Z - info: Using extension cli
+2018-08-31T10:17:58.225Z - info: Using extension freeze
+2018-08-31T10:17:58.228Z - info: Using extension debug
+2018-08-31T10:17:58.230Z - info: Using extension ejs
+2018-08-31T10:17:58.230Z - info: Using extension express
+2018-08-31T10:17:58.233Z - info: Using extension pdf-utils
+2018-08-31T10:17:58.235Z - info: Using extension data
+2018-08-31T10:17:58.243Z - info: Using extension chrome-pdf
+2018-08-31T10:17:58.361Z - info: Using extension html-to-xlsx
+2018-08-31T10:17:58.470Z - info: html-to-xlsx detected chrome as available html engine
+2018-08-31T10:17:58.470Z - info: Using extension child-templates
+2018-08-31T10:17:58.477Z - info: Using extension browser-client
+2018-08-31T10:17:58.480Z - info: Using extension licensing
+2018-08-31T10:17:58.519Z - info: Using extension authorization
+2018-08-31T10:17:58.522Z - debug: Extension authorization was disabled
+2018-08-31T10:17:58.522Z - info: Using extension version-control
+2018-08-31T10:17:58.597Z - info: Using extension reports
+2018-08-31T10:17:58.603Z - info: Using extension text
+2018-08-31T10:17:58.604Z - info: Using extension base
+2018-08-31T10:17:58.606Z - info: Using extension studio
+2018-08-31T10:17:58.629Z - info: Using extension fs-store
+2018-08-31T10:17:58.940Z - debug: Extension fs-store was disabled
+2018-08-31T10:17:58.940Z - info: Using extension scripts
+2018-08-31T10:17:58.946Z - info: Using extension assets
+2018-08-31T10:17:58.964Z - info: Using extension scheduling
+2018-08-31T10:17:59.005Z - info: Using extension xlsx
+2018-08-31T10:17:59.091Z - info: Using extension sample-template
+2018-08-31T10:17:59.093Z - debug: Creating samples is disabled
+2018-08-31T10:17:59.094Z - info: Using extension resources
+2018-08-31T10:17:59.096Z - info: Using extension public-templates
+2018-08-31T10:17:59.101Z - debug: Extension public-templates was disabled
+2018-08-31T10:17:59.117Z - info: Configuring routes for existing express app.
+2018-08-31T10:17:59.135Z - info: Verifying license key free
+2018-08-31T10:17:59.136Z - info: Using free license
+2018-08-31T10:17:59.143Z - info: reporter initialized
+2018-08-31T10:20:48.305Z - info: Initializing jsreport@2.2.0 in development mode using configuration file: none
+2018-08-31T10:20:48.306Z - info: Searching for available extensions in c:\Projetos\TIMEPRO\WSCautelar\
+2018-08-31T10:20:48.311Z - info: Initializing jsreport@2.1.1 in development mode
+2018-08-31T10:20:48.325Z - info: Setting process based strategy for rendering. Please visit http://jsreport.net/learn/configuration for information how to get more performance.
+2018-08-31T10:20:48.331Z - info: Using extension ejs
+2018-08-31T10:20:48.334Z - info: Using extension templates
+2018-08-31T10:20:48.334Z - info: Using extension express
+2018-08-31T10:20:48.364Z - info: Configuring routes for existing express app.
+2018-08-31T10:20:48.367Z - info: Using existing server instance.
+2018-08-31T10:20:48.368Z - info: reporter initialized
+2018-08-31T10:20:48.370Z - info: Extensions location cache contains up to date information, skipping crawling in c:\Projetos\TIMEPRO\WSCautelar\
+2018-08-31T10:20:48.431Z - info: Found 32 extensions
+2018-08-31T10:20:48.460Z - debug: Writing extension locations cache to C:\Users\FABIO~1.COS\AppData\Local\Temp\jsreport\core\locations.json
+2018-08-31T10:20:48.462Z - debug: Discovered 32 extensions
+2018-08-31T10:20:48.498Z - info: Setting process based strategy for rendering. Please visit http://jsreport.net/learn/configuration for information how to get more performance.
+2018-08-31T10:20:48.500Z - info: Using extension import-export
+2018-08-31T10:20:48.789Z - info: Using extension tags
+2018-08-31T10:20:48.794Z - info: Using extension templates
+2018-08-31T10:20:48.794Z - info: Using extension jsrender
+2018-08-31T10:20:48.795Z - info: Using extension authentication
+2018-08-31T10:20:48.853Z - debug: Extension authentication was disabled
+2018-08-31T10:20:48.854Z - info: Using extension handlebars
+2018-08-31T10:20:48.855Z - info: Using extension cli
+2018-08-31T10:20:48.856Z - info: Using extension freeze
+2018-08-31T10:20:48.858Z - info: Using extension debug
+2018-08-31T10:20:48.860Z - info: Using extension ejs
+2018-08-31T10:20:48.861Z - info: Using extension express
+2018-08-31T10:20:48.865Z - info: Using extension pdf-utils
+2018-08-31T10:20:48.868Z - info: Using extension data
+2018-08-31T10:20:48.872Z - info: Using extension chrome-pdf
+2018-08-31T10:20:49.033Z - info: Using extension html-to-xlsx
+2018-08-31T10:20:49.156Z - info: html-to-xlsx detected chrome as available html engine
+2018-08-31T10:20:49.156Z - info: Using extension child-templates
+2018-08-31T10:20:49.164Z - info: Using extension browser-client
+2018-08-31T10:20:49.167Z - info: Using extension licensing
+2018-08-31T10:20:49.212Z - info: Using extension authorization
+2018-08-31T10:20:49.216Z - debug: Extension authorization was disabled
+2018-08-31T10:20:49.217Z - info: Using extension version-control
+2018-08-31T10:20:49.291Z - info: Using extension reports
+2018-08-31T10:20:49.296Z - info: Using extension text
+2018-08-31T10:20:49.297Z - info: Using extension base
+2018-08-31T10:20:49.299Z - info: Using extension studio
+2018-08-31T10:20:49.322Z - info: Using extension fs-store
+2018-08-31T10:20:49.634Z - debug: Extension fs-store was disabled
+2018-08-31T10:20:49.634Z - info: Using extension scripts
+2018-08-31T10:20:49.640Z - info: Using extension assets
+2018-08-31T10:20:49.657Z - info: Using extension scheduling
+2018-08-31T10:20:49.699Z - info: Using extension xlsx
+2018-08-31T10:20:49.787Z - info: Using extension sample-template
+2018-08-31T10:20:49.790Z - debug: Creating samples is disabled
+2018-08-31T10:20:49.790Z - info: Using extension resources
+2018-08-31T10:20:49.792Z - info: Using extension public-templates
+2018-08-31T10:20:49.797Z - debug: Extension public-templates was disabled
+2018-08-31T10:20:49.860Z - info: Configuring routes for existing express app.
+2018-08-31T10:20:49.881Z - info: Verifying license key free
+2018-08-31T10:20:49.882Z - info: Using free license
+2018-08-31T10:20:49.889Z - info: reporter initialized
+2018-08-31T10:23:00.507Z - info: Starting rendering request 1 (user: null)
+2018-08-31T10:23:00.509Z - info: Rendering anonymous template { recipe: chrome-pdf, engine: ejs }
+2018-08-31T10:23:00.511Z - debug: Rendering engine ejs
+2018-08-31T10:23:10.544Z - warn: Error when processing render request Timeout error during executing script Error: Timeout error during executing script
+    at Timeout._onTimeout (c:\Projetos\TIMEPRO\WSCautelar\node_modules\script-manager\lib\manager-processes.js:25:8)
+    at ontimeout (timers.js:466:11)
+    at Timer.unrefdHandle (timers.js:578:5)
