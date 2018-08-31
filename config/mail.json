@@ -1,0 +1,8 @@
+{
+    "host": "smtp.mailtrap.io",
+    "port": 2525,
+    "user": "c5e09cbae02e0f",
+    "pass": "bbe3eed5e7a415",
+    "mailLogTo": "alertavistoriapro@compuletra.com.br",
+    "mailLogFrom": "nao-responda@compuletra.com.br"
+}

@@ -1,0 +1,191 @@
+<html>
+
+<head>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            height: 842px;
+            width: 795px;
+        }
+
+        body h1 {
+            text-align: center;
+        }
+
+        table {
+            border: 1px solid #CCC;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        table thead {
+            text-align: center;
+            font-weight: bold;
+        }
+
+        table thead tr {
+            background-color: #CCC;
+        }
+
+        td {
+            border: none;
+        }
+
+        table tbody td {
+            width: 150px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Laudo de Vistoria
+        <%=info.modality.title%>
+    </h1>
+    <table>
+        <thead>
+            <tr>
+                <td colspan="4">Dados da vistoria</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><b>Identificador:</b></td>
+                <td>
+                    <%=info.id%>
+                </td>
+                <td><b>Situação:</b></td>
+                <td>
+                    <%=info.situation%>
+                </td>
+            </tr>
+            <tr>
+                <td><b>Data da vistoria:</b></td>
+                <td>
+                    <%=info.evaluationDate.toLocaleDateString()%>
+                </td>
+                <td></td>
+                <td>
+                </td>
+            </tr>
+            <tr>
+                <td><b>Vistoriador:</b></td>
+                <td>
+                    <%=info.user.name%>
+                </td>
+                <td><b>CPF:</b></td>
+                <td>
+                    <%=info.user.CPF%>
+                </td>
+            </tr>
+            <tr>
+                <td><b>Empresa:</b></td>
+                <td>
+                    <%=info.company.name%>
+                </td>
+                <td><b>CNPJ:</b></td>
+                <td>
+                    <%=info.company.CNPJ%>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table>
+        <thead>
+            <td colspan="4">Dados do veículo</td>
+        </thead>
+        <tbody>
+            <tr>
+                <td><b>Placa:</b></td>
+                <td>
+                    <%=info.vehicle.plate%>
+                </td>
+                <td><b>Chassi:</b></td>
+                <td>
+                    <%=info.vehicle.vin%>
+                </td>
+            </tr>
+            <tr>
+                <td><b>Renavam:</b></td>
+                <td>
+                    <%=info.vehicle.renavam%>
+                </td>
+                <td><b>Modelo:</b></td>
+                <td>
+                    <%=info.vehicle.model%>
+                </td>
+            </tr>
+            <tr>
+                <td><b>Tipo:</b></td>
+                <td>
+                    <%=info.vehicle.kind%>
+                </td>
+                <td><b>Tipo do veículo:</b></td>
+                <td>
+                    <%=info.vehicle.vehicleType%>
+                </td>
+            </tr>
+            <tr>
+                <td><b>Ano modelo:</b></td>
+                <td>
+                    <%=info.vehicle.modelYear%>
+                </td>
+                <td><b>Ano fabricação:</b></td>
+                <td>
+                    <%=info.vehicle.manufacturingYear%>
+                </td>
+            </tr>
+            <tr>
+                <td><b>Carroçaria:</b></td>
+                <td>
+                    <%=info.vehicle.bodywork%>
+                </td>
+                <td><b>Combustível:</b></td>
+                <td>
+                    <%=info.vehicle.fuel%>
+                </td>
+            </tr>
+            <tr>
+                <td><b>Cor:</b></td>
+                <td>
+                    <%=info.vehicle.color%>
+                </td>
+                <td><b>Potência:</b></td>
+                <td>
+                    <%=info.vehicle.power%>
+                </td>
+            </tr>
+            <tr>
+                <td><b>Cilindradas:</b></td>
+                <td>
+                    <%=info.vehicle.cylinder%>
+                </td>
+                <td><b>Passageiros:</b></td>
+                <td>
+                    <%=info.vehicle.passengers%>
+                </td>
+            </tr>
+            <tr>
+                <td><b>Cap. Carga:</b></td>
+                <td>
+                    <%=info.vehicle.capacityLoad%>
+                </td>
+                <td><b>Categoria:</b></td>
+                <td>
+                    <%=info.vehicle.category%>
+                </td>
+            </tr>
+            <tr>
+                <td><b>PBT:</b></td>
+                <td>
+                    <%=info.vehicle.PBT%>
+                </td>
+                <td><b>CMT:</b></td>
+                <td>
+                    <%=info.vehicle.CMT%>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+
+</html>

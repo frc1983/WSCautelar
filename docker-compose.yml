@@ -1,0 +1,33 @@
+version: '3'
+services:
+  web:
+    image: docker-node-express-mongoapp
+    build: ./
+    command: node src/app/index.js
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./:/usr/src/app
+      - /usr/node_modules
+    depends_on:
+      - "mongo"
+    networks:
+      - nd
+  
+  mongo:
+    image: "mongo"
+    ports:
+      - "27017:27017"
+    networks:
+      - nd
+
+  adminmongo:
+    image: "mrvautin/adminmongo"
+    ports:
+      - "1234:1234"
+    networks:
+      - nd
+
+networks:  
+  nd:
+    driver: bridge
