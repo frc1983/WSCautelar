@@ -51,20 +51,17 @@ router.put('/', async (req, res) => {
     };
 });
 
-router.get('/:evaluatedId/:pictureId', async (req, res) => {
-    const { evaluatedId, pictureId } = req.params;
+router.get('/:evaluatedId/:pictureNumber', async (req, res) => {
+    const { evaluatedId, pictureNumber } = req.params;
 
     try {
         var evalPicture = await EvaluatedPicture.findOne({
             "evaluated": evaluatedId,
-            "picture": pictureId
+            "picture": pictureNumber
         }).sort({ createdAt: -1 }); 
 
-        console.log('Upload', uploadFolder);
-        console.log('eval', evalPicture);
-
         if (!evalPicture)
-            return res.status(400).send({ error: 'Imagem da vistoria nao encontrada: ' + evaluatedId + ' --- ' + pictureId });
+            res.status(400).send({ error: 'Imagem da vistoria nao encontrada: ' + evaluatedId + ' --- ' + pictureNumber });
 
         var bitmap = fs.readFileSync(uploadFolder + evalPicture.path);
         //res.download(uploadFolder + evalPicture.path);
@@ -96,13 +93,13 @@ async function validatePictureSend(req, evaluatedId, pictureNumber) {
 async function saveEvaluatedPicture(isNew, file, evaluatedId, pictureNumber) {
     var sendedFilename = file.name.split('.')[1];
     var eval = await Evaluated.findById(evaluatedId);
-    var pic = await Picture.findOne({ number: pictureNumber });
+    //var pic = await Picture.findOne({ number: pictureNumber });
     var filename = "";
     var imagePath = "";
     var savedImage = null;
 
     if (!isNew) {
-        savedImage = await EvaluatedPicture.findOne({ evaluated: eval, picture: pic });
+        savedImage = await EvaluatedPicture.findOne({ evaluated: eval, picture: pictureNumber });
         if (!savedImage)
             throw new Error("Registro de imagem para atualização não encontrado");
 
@@ -111,7 +108,7 @@ async function saveEvaluatedPicture(isNew, file, evaluatedId, pictureNumber) {
     } else {
         var evaluatedPicture = new EvaluatedPicture();
         evaluatedPicture.evaluated = eval;
-        evaluatedPicture.picture = pic;
+        evaluatedPicture.picture = pictureNumber;
         savedImage = await EvaluatedPicture.create(evaluatedPicture);
         filename = savedImage.id + "." + sendedFilename;
         imagePath = getDatePath(eval) + filename;

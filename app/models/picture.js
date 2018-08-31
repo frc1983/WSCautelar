@@ -10,6 +10,11 @@ const PictureSchema = new mongoose.Schema({
         required: true,
         unique: true
     },
+    samples: {
+        type: Number,
+        required: true,
+        default: 1
+    },
     required: {
         type: Boolean,
         default: true
