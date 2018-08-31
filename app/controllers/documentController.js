@@ -10,8 +10,9 @@ const Evaluated = require('../models/evaluated');
 
 const router = express.Router();
 
-const uploadFolder = __dirname + '/../uploads/';
 //router.use(authMiddleware);
+
+const uploadFolder = __dirname + '/../uploads/';
 router.get('/:id', async (req, res) => {
     const { id } = req.params;
 
@@ -22,7 +23,7 @@ router.get('/:id', async (req, res) => {
         //printPage();
         await findEvaluated(id).then(doc => {
             res.render('warranty.html', { info: doc });
-            //res.status(200).send({ document: doc });        
+            //res.status(200).send({ document: doc });
         }).catch(err => {
             res.status(400).send({ error: err });
         });
@@ -53,6 +54,7 @@ function base64_encode(file) {
     var bitmap = fs.readFileSync(file);
     return new Buffer(bitmap).toString('base64');
 }
+
 
 function printPage() {
     const puppeteer = require('puppeteer');

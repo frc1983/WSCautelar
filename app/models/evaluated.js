@@ -23,6 +23,10 @@ const EvaluatedSchema = new mongoose.Schema({
         type: Date,
         require: true
     },
+    evaluationDateString :  {
+        type: String,
+        require: false
+    },
     situation: {
         type: String,
         require: true
