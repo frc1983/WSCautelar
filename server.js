@@ -30,16 +30,7 @@ app.use(function (err, req, res, next) {
   res.status(500).send('Server error!');
 });
 
-var server = app.listen(port, ip);
+app.listen(port, ip);
 console.log('Server running on http://%s:%s', ip, port);
-
-var reportingApp = express();
-var jsreport = require('jsreport-core')()
-jsreport.use(require('jsreport-ejs')());
-//jsreport.use(require('jsreport-handlebars')());
-//jsreport.use(require('jsreport-jsrender')());
-jsreport.use(require('jsreport-templates')());
-jsreport.use(require('jsreport-express')({ app: reportingApp, server: server }));
-jsreport.init();
 
 module.exports = app;

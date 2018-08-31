@@ -1,5 +1,4 @@
 const express = require('express');
-const jsreport = require('jsreport');
 const authMiddleware = require('../middlewares/auth');
 const Logger = require('../../modules/log');
 const Modality = require('../models/modality');
@@ -12,8 +11,6 @@ const router = express.Router();
 
 router.use(authMiddleware);
 
-require('jsreport')({ httpPort: 3000, httpsPort: 0 }).init();
-
 router.get('/:id', async (req, res) => {
     const { id } = req.params;
 
@@ -22,23 +19,7 @@ router.get('/:id', async (req, res) => {
             res.status(400).send({ error: "O identificador da vistoria deve ser preenchido" });
 
         await findEvaluated(id).then(doc => {
-            //res.status(200).send({ document: doc });
-
-            jsreport.render({
-                template: {
-                    content: '<h1>Hello {{foo}}</h1>',
-                    engine: 'ejs',
-                    recipe: 'chrome-pdf'
-                },
-                data: {
-                    foo: "world"
-                }
-            }).then((resp) => {
-                // write report buffer to a file
-                fs.writeFileSync('report.pdf', resp.content)
-            }).catch(err => {
-                res.status(400).send({ error: err });
-            });
+            res.status(200).send({ document: doc });           
         }).catch(err => {
             res.status(400).send({ error: err });
         });
