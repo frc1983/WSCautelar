@@ -130,18 +130,21 @@ function getDatePath(evaluated) {
     return date.getFullYear() + "/" + (date.getMonth() + 1) + "/" + date.getDate() + "/";
 
     function createUploadsFolder(date) {
+
+        if(!fs.exists(uploadFolder))
+            fs.mkdirSync(uploadFolder);
+
         var dirYear = uploadFolder + date.getFullYear();
-        if (!fs.existsSync(dirYear)) {
+        if (!fs.existsSync(dirYear))
             fs.mkdirSync(dirYear);
-        }
+            
         var dirMonth = dirYear + "/" + (date.getMonth() + 1);
-        if (!fs.existsSync(dirMonth)) {
+        if (!fs.existsSync(dirMonth))
             fs.mkdirSync(dirMonth);
-        }
+            
         var dirDay = dirMonth + "/" + date.getDate();
-        if (!fs.existsSync(dirDay)) {
+        if (!fs.existsSync(dirDay))
             fs.mkdirSync(dirDay);
-        }
     }
 }
 
